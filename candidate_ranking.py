@@ -12,17 +12,13 @@ def rank_candidate(candidate, job):
     nlp = spacy.load('en_core_web_sm');
     
     score1 = description_score(nlp,candidate.summary,job.description);
-#    print("Description Score :",score1);
     
     
     score2 = experience_score(nlp,candidate.organizations , job.responsibilities);
-#    print("Experience Score :",score2);
 
     score3 = skills_score(nlp,candidate.skills,job.keywords);
-#    print("Skills Score :",score3);
 
     score4 = requirement_score(nlp, candidate.summary + candidate.organizations , job.requirements);
-#    print("Description Score :",score4);
     
     total_score = max(score1, score2 , score3 , score4);
     

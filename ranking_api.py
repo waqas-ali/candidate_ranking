@@ -23,7 +23,7 @@ class Ranking(Resource):
         profile = jb['profile'];
         
         candidate = pu.parse_candidate_info(profile);
-        #print(type(job_desc));
+        
         job = pu.parse_job(job_desc,keywords);
         
         print(candidate.summary);
